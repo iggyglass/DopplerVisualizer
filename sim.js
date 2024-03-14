@@ -9,19 +9,19 @@ var emitter;
 var lastDraw = Date.now();
 
 var mousePos = {
-    x: 0,
-    y: 0
+    x: window.innerWidth * window.devicePixelRatio / 2,
+    y: window.innerHeight * window.devicePixelRatio / 2
 };
 
 function init() {
     initCanvas();
 
-    emitter = new Emitter([UI.canvas.width / 2, UI.canvas.height / 2]);
-
     window.addEventListener('resize', initCanvas);
     window.addEventListener('mousemove', onMouseMove);
     UI.speedSlider.addEventListener('input', (_) => UI.speedSliderText.innerHTML = `${UI.speedSlider.value}<i>c</i>`);
     setInterval(() => pool.instantiateWave(emitter.getPosition()), Consts.wavePeriod);
+
+    emitter = new Emitter([UI.canvas.width / 2, UI.canvas.height / 2]);
 
     window.requestAnimationFrame(draw);
 }

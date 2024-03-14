@@ -1,6 +1,10 @@
 body {
     color: white;
     font-family: 'Roboto', sans-serif;
+    background-color: rgb(38, 38, 38);
+    background-size: 25px 25px;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, rgba(0, 0, 0, 0) 1px);
+    background-attachment: fixed;
 }
 
 canvas {
@@ -16,14 +20,32 @@ canvas {
     top: 5px;
 }
 
+label.inputs {
+    display: inline-block;
+    margin-right: 0px !important;
+    width: 95%;
+    margin-top: 1px !important;
+    margin-bottom: 0px !important;
+}
+
+.input-right {
+    position: absolute;
+    right: 5px;
+}
+
+.input-right.value {
+    font-weight: 100;
+}
+
 #input-div {
-    background-color: #000000AA;
+    background-color: #00000042;
     position: absolute;
     top: 0px;
     right: 0px;
     z-index: 1;
     border-radius: 5px;
     width: 10.7rem;
+    backdrop-filter: blur(5px);
 }
 
 input[type="range"] {
@@ -32,6 +54,7 @@ input[type="range"] {
     background: transparent;
     cursor: pointer;
     width: 10rem;
+    margin-bottom: 20px;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
